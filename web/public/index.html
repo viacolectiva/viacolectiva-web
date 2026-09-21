@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>viacolectiva — Music, photo, video &amp; digital products</title>
+  <meta name="description" content="Creative and tech production house. We make music, photo and video, and design and build apps and platforms for music and technology.">
+  <meta name="theme-color" content="#0B0B0B">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="viacolectiva — Music, photo, video &amp; digital products">
+  <meta property="og:description" content="Creative and tech production house: music, photo, video, and apps and platforms for music and technology.">
+  <meta property="og:url" content="https://viacolectiva.com/">
+  <meta property="og:image" content="https://viacolectiva.com/assets/img/og-image.jpg">
+  <link rel="canonical" href="https://viacolectiva.com/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/AlteHaasGroteskBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script>
+    // Animaciones sólo si el usuario no pidió movimiento reducido.
+    // Si las librerías no cargan, main.js (o este failsafe) muestra todo sin animar.
+    (function () {
+      var h = document.documentElement;
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) h.classList.add('anim');
+      setTimeout(function () { if (!window.__vcReady) h.classList.remove('anim'); }, 4000);
+    })();
+  </script>
+</head>
+<body>
+  <!--
+    Idiomas: el inglés (por defecto) está escrito acá, en el HTML.
+    Las traducciones al español están en js/i18n.js, con la misma clave de cada data-i18n.
+  -->
+  <a class="skip" href="#servicios" data-i18n="skip">Skip to content</a>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="marks" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  <div class="cursor" aria-hidden="true"></div>
+  <div class="wipe" aria-hidden="true"><span class="wipe-label mono"></span></div>
+
+  <!-- LOADER -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <svg class="loader-iso iso" viewBox="0 0 400 400">
+      <circle class="draw" cx="200" cy="200" r="174.29" pathLength="1"/>
+      <path class="draw" pathLength="1" d="M348.37 106.7C329.67 117.1 287.41 143.99 259.81 196.87 218.76 275.55 241.24 352.2 246.3 368.14"/>
+      <path class="draw" pathLength="1" d="M279.58 44.97 343.53 298.95"/>
+      <path class="draw" pathLength="1" d="M372.98 179.32 180.94 373.18"/>
+      <circle class="dot" cx="325.94" cy="227.44" r="15.4"/>
+    </svg>
+    <div class="loader-meta mono">
+      <span>viacolectiva</span>
+      <span data-i18n="loader">Converging signal</span>
+      <span class="loader-count">000</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="viacolectiva — home" data-i18n-aria="a11y.home"><span class="logo" aria-hidden="true"></span></a>
+    <div class="nav-right">
+      <nav class="nav-links mono" aria-label="Main" data-i18n-aria="a11y.main">
+        <a href="#servicios" data-scramble data-i18n="nav.services">Services</a>
+        <a href="#digital" data-scramble data-i18n="nav.digital">Digital</a>
+        <a href="#contacto" class="nav-cta"><span data-scramble data-i18n="nav.cta">Let’s talk</span><i class="sq" aria-hidden="true"></i></a>
+      </nav>
+      <div class="lang mono" role="group" aria-label="Language" data-i18n-aria="a11y.lang">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button><span aria-hidden="true">/</span><button type="button" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MENÚ MÓVIL -->
+  <nav class="menu" id="menu" aria-label="Sections" data-i18n-aria="a11y.sections" aria-hidden="true">
+    <div class="menu-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <ol class="menu-list">
+      <li style="--i: 0"><a class="menu-link" href="#top" data-spy="00"><span class="mono">[00]</span><span class="clip"><span class="menu-word" data-i18n="menu.home">home</span></span><span class="menu-arrow mono" aria-hidden="true">↗</span></a></li>
+      <li style="--i: 1"><a class="menu-link" href="#servicios" data-spy="01"><span class="mono">[01]</span><span class="clip"><span class="menu-word" data-i18n="menu.services">services</span></span><span class="menu-arrow mono" aria-hidden="true">↗</span></a></li>
+      <li style="--i: 2"><a class="menu-link" href="#digital" data-spy="02"><span class="mono">[02]</span><span class="clip"><span class="menu-word" data-i18n="menu.digital">digital</span></span><span class="menu-arrow mono" aria-hidden="true">↗</span></a></li>
+      <li style="--i: 3"><a class="menu-link" href="#contacto" data-spy="03"><span class="mono">[03]</span><span class="clip"><span class="menu-word" data-i18n="menu.contact">contact</span></span><span class="menu-arrow mono" aria-hidden="true">↗</span></a></li>
+    </ol>
+    <div class="menu-foot mono">
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="a11y.lang">
+        <button type="button" data-lang="en" aria-pressed="true">English</button><span aria-hidden="true">/</span><button type="button" data-lang="es" aria-pressed="false">Español</button>
+      </div>
+      <a class="email" href="mailto:contact@viacolectiva.com">contact@viacolectiva.com</a>
+      <span data-i18n="areas">Music · Photo · Video · Digital</span>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top" data-section="dark" data-spy="00">
+      <h1 class="hero-title" aria-label="Making the intangible real" data-i18n-aria="hero.aria">
+        <span class="clip"><span class="line line-top" data-chars data-i18n="hero.l1">making the</span></span>
+        <span class="clip clip-bottom"><span class="line line-bottom" data-chars data-i18n="hero.l2">intangible real</span></span>
+      </h1>
+
+      <div class="hero-iso" aria-hidden="true">
+        <svg class="iso" viewBox="0 0 400 400">
+          <circle class="draw" cx="200" cy="200" r="174.29" pathLength="1"/>
+          <path class="draw" pathLength="1" d="M348.37 106.7C329.67 117.1 287.41 143.99 259.81 196.87 218.76 275.55 241.24 352.2 246.3 368.14"/>
+          <path class="draw" pathLength="1" d="M279.58 44.97 343.53 298.95"/>
+          <path class="draw" pathLength="1" d="M372.98 179.32 180.94 373.18"/>
+          <circle class="dot" cx="325.94" cy="227.44" r="15.4"/>
+        </svg>
+      </div>
+
+      <div class="hero-meta">
+        <div class="hero-intro" data-reveal>
+          <p class="mono label" data-i18n="hero.label">[ Creative + tech production house ]</p>
+          <p class="mono" data-i18n="hero.intro">Video, image, audio, content and digital products. We create for artists and brands, turning ideas into content, experiences and technology.</p>
+        </div>
+        <ul class="hero-index mono" data-reveal>
+          <li><i style="--c: var(--c-digital)"></i><span data-i18n="area.digital">Digital products</span></li>
+          <li><i style="--c: var(--c-audio)"></i><span data-i18n="area.audio">Music &amp; audio</span></li>
+          <li><i style="--c: var(--c-imagen)"></i><span data-i18n="area.imagen">Photo &amp; image</span></li>
+          <li><i style="--c: var(--c-video)"></i><span data-i18n="area.video">Video</span></li>
+          <li class="muted" data-i18n="hero.years">10+ years · international market</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="section services" id="servicios" data-section="light" data-spy="01">
+      <div class="sec-head mono"><span>[01]</span><span data-scramble-in data-i18n="svc.head">Services</span><span data-i18n="svc.headRight">All under one roof</span></div>
+
+      <div class="manifesto">
+        <h2 class="manifesto-title" aria-label="The ability to create is a gift." data-i18n-aria="man.aria">
+          <span class="clip"><span data-chars data-i18n="man.l1">the ability</span></span>
+          <span class="clip"><span data-chars data-i18n="man.l2">to create</span></span>
+          <span class="clip"><span data-chars data-i18n="man.l3">is a gift.</span></span>
+        </h2>
+        <div class="manifesto-copy">
+          <p class="mono label" data-reveal data-i18n="man.label">[ What we believe ]</p>
+          <p class="manifesto-text" data-words data-i18n="man.text">A talent that shouldn’t go to waste. We start from an idea born in your mind and turn it into something others can hear, see, use and live.</p>
+          <p class="mono manifesto-note" data-reveal data-i18n="man.note">viacolectiva is where video, image, audio and technology converge to amplify the reach of artists and brands. Not just further, but deeper.</p>
+        </div>
+      </div>
+
+      <ol class="svc-list">
+        <!-- 01 · DIGITAL -->
+        <li class="svc" data-key="digital" style="--c: var(--c-digital); --on-c: var(--ink)">
+          <button class="svc-head" aria-expanded="false" aria-controls="svc-1">
+            <span class="svc-num mono">[01]</span>
+            <i class="svc-dot" aria-hidden="true"></i>
+            <span class="svc-title" data-i18n="area.digital">Digital products</span>
+            <span class="svc-sum mono" data-i18n="d.sum">Apps and platforms for music and technology</span>
+            <span class="svc-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body" id="svc-1">
+            <div class="svc-body-inner">
+              <div class="svc-item"><h3 data-i18n="d.1t">Mobile &amp; web apps</h3><p data-i18n="d.1p">Custom products for artists, labels, studios and brands: from idea to launch.</p></div>
+              <div class="svc-item"><h3 data-i18n="d.2t">Music platforms</h3><p data-i18n="d.2p">Streaming, catalogs, music sales and fan communities, with built-in analytics.</p></div>
+              <div class="svc-item"><h3 data-i18n="d.3t">Product design · UX/UI</h3><p data-i18n="d.3p">Research, prototypes and design systems with your project’s aesthetic.</p></div>
+              <div class="svc-item"><h3 data-i18n="d.4t">Development &amp; integrations</h3><p data-i18n="d.4p">APIs, payments, automations and connections to streaming platforms and social media.</p></div>
+              <a class="svc-more mono" href="#digital" data-i18n="d.more">Explore digital ↓</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- 02 · MÚSICA & AUDIO -->
+        <li class="svc" data-key="audio" style="--c: var(--c-audio); --on-c: #fff">
+          <button class="svc-head" aria-expanded="false" aria-controls="svc-2">
+            <span class="svc-num mono">[02]</span>
+            <i class="svc-dot" aria-hidden="true"></i>
+            <span class="svc-title" data-i18n="area.audio">Music &amp; audio</span>
+            <span class="svc-sum mono" data-i18n="a.sum">Music production, editing, audio branding and distribution</span>
+            <span class="svc-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body" id="svc-2">
+            <div class="svc-body-inner">
+              <div class="svc-item"><h3 data-i18n="a.1t">Music production</h3><p data-i18n="a.1p">Original music and lyrics, arrangements, covers, recording, mixing and mastering for artists, film, TV and radio.</p></div>
+              <div class="svc-item"><h3 data-i18n="a.2t">Audio editing</h3><p data-i18n="a.2p">Cleanup and restoration, vocal tuning, instrument quantization and sound editing.</p></div>
+              <div class="svc-item"><h3 data-i18n="a.3t">Audio branding</h3><p data-i18n="a.3p">Audio logos, corporate music, background music, jingles and voice-overs. Sonic identities that stick.</p></div>
+              <div class="svc-item"><h3 data-i18n="a.4t">Digital distribution</h3><p data-i18n="a.4p">We get your music on Spotify, Apple Music, Amazon Music, Deezer and the main digital stores.</p></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 03 · FOTO & IMAGEN -->
+        <li class="svc" data-key="imagen" style="--c: var(--c-imagen); --on-c: #fff">
+          <button class="svc-head" aria-expanded="false" aria-controls="svc-3">
+            <span class="svc-num mono">[03]</span>
+            <i class="svc-dot" aria-hidden="true"></i>
+            <span class="svc-title" data-i18n="area.imagen">Photo &amp; image</span>
+            <span class="svc-sum mono" data-i18n="i.sum">Art direction, photography, graphic design and image consulting</span>
+            <span class="svc-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body" id="svc-3">
+            <div class="svc-body-inner">
+              <div class="svc-item"><h3 data-i18n="i.1t">Art direction</h3><p data-i18n="i.1p">Research and concept development: we design the style and visual approach of each project.</p></div>
+              <div class="svc-item"><h3 data-i18n="i.2t">Photography</h3><p data-i18n="i.2p">Artist photo sessions and commercial photography for social media, web and e-commerce.</p></div>
+              <div class="svc-item"><h3 data-i18n="i.3t">Graphic design</h3><p data-i18n="i.3p">Album and single covers, visuals, banners and social media content for artists and companies.</p></div>
+              <div class="svc-item"><h3 data-i18n="i.4t">Image consulting</h3><p data-i18n="i.4p">Personal branding, effective communication and the unique value that sets each project apart.</p></div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 04 · VIDEO -->
+        <li class="svc" data-key="video" style="--c: var(--c-video); --on-c: #fff">
+          <button class="svc-head" aria-expanded="false" aria-controls="svc-4">
+            <span class="svc-num mono">[04]</span>
+            <i class="svc-dot" aria-hidden="true"></i>
+            <span class="svc-title" data-i18n="area.video">Video</span>
+            <span class="svc-sum mono" data-i18n="v.sum">Direction, production and post-production</span>
+            <span class="svc-toggle" aria-hidden="true"></span>
+          </button>
+          <div class="svc-body" id="svc-4">
+            <div class="svc-body-inner">
+              <div class="svc-item"><h3 data-i18n="v.1t">Direction</h3><p data-i18n="v.1p">Concept and visual aesthetics, technical and literary scripts. We’re with you through pre-production, production and post-production.</p></div>
+              <div class="svc-item"><h3 data-i18n="v.2t">Audiovisual content</h3><p data-i18n="v.2p">Music videos, live sessions, interviews, testimonials, making-ofs, behind the scenes, lyric videos, short films and promos.</p></div>
+              <div class="svc-item"><h3 data-i18n="v.3t">Post-production</h3><p data-i18n="v.3p">Editing, VFX, color grading and sound design.</p></div>
+            </div>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- DIGITAL -->
+    <section class="section digital" id="digital" data-section="lime" data-spy="02">
+      <div class="sec-head mono"><span>[02]</span><span data-scramble-in data-i18n="area.digital">Digital products</span><span data-i18n="dg.headRight">Apps &amp; platforms</span></div>
+
+      <div class="fit-wrap">
+        <h2 class="giant" data-fit aria-label="Digital" data-i18n-aria="dg.aria"><span class="clip"><span data-chars data-i18n="dg.giant">digital</span></span></h2>
+      </div>
+
+      <div class="digital-intro">
+        <p class="digital-lead" data-reveal data-i18n="dg.lead">We design and build apps and platforms for music and technology.</p>
+        <div class="digital-copy" data-reveal>
+          <p data-i18n="dg.copy">They’re built by people who produce, record and release music every day. We study the problem from the inside: what the client needs to create, launch and grow.</p>
+          <a class="btn" href="#contacto"><span data-i18n="dg.btn">Tell us your idea</span> <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="wave" aria-hidden="true">
+        <div class="wave-meta mono"><span data-i18n="wave.1">Input · idea</span><span data-i18n="wave.2">Signal ▸ product</span><span data-i18n="wave.3">Output · launch</span></div>
+        <canvas></canvas>
+      </div>
+
+      <div class="block">
+        <p class="block-title mono" data-i18n="dg.how">How we work</p>
+        <ol class="process">
+          <li><span class="mono">01</span><h3 data-i18n="p.1t">Discover</h3><p data-i18n="p.1p">We get to know your idea, your audience and the problem to solve.</p></li>
+          <li><span class="mono">02</span><h3 data-i18n="p.2t">Design</h3><p data-i18n="p.2p">Prototypes and UX/UI with your project’s aesthetic.</p></li>
+          <li><span class="mono">03</span><h3 data-i18n="p.3t">Build</h3><p data-i18n="p.3p">Solid, scalable code designed to grow.</p></li>
+          <li><span class="mono">04</span><h3 data-i18n="p.4t">Launch</h3><p data-i18n="p.4p">We ship, measure and support the launch.</p></li>
+          <li><span class="mono">05</span><h3 data-i18n="p.5t">Evolve</h3><p data-i18n="p.5p">We iterate with data and new features.</p></li>
+        </ol>
+      </div>
+
+      <!-- Oculto por ahora (se usará más adelante): qué construimos y capacidades.
+           Para mostrarlo, quitar el atributo "hidden". -->
+      <div class="digital-more" hidden>
+        <div class="block">
+          <p class="block-title mono" data-i18n="dg.build">What we build</p>
+          <div class="cards">
+            <article class="card" data-reveal>
+              <span class="mono card-num">001</span>
+              <h3 data-i18n="c.1t">Apps for artists &amp; labels</h3>
+              <p data-i18n="c.1p">Releases, exclusive content, pre-sales and community in an app of your own.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="mono card-num">002</span>
+              <h3 data-i18n="c.2t">Music platforms</h3>
+              <p data-i18n="c.2p">Streaming, catalogs, sales of music, beats and licenses, with real-time metrics.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="mono card-num">003</span>
+              <h3 data-i18n="c.3t">Tools for creators</h3>
+              <p data-i18n="c.3p">Software to produce, collaborate, organize sessions and automate workflows.</p>
+            </article>
+            <article class="card" data-reveal>
+              <span class="mono card-num">004</span>
+              <h3 data-i18n="c.4t">Web experiences</h3>
+              <p data-i18n="c.4p">Launch sites, EPKs and interactive experiences that sound as good as they look.</p>
+            </article>
+          </div>
+        </div>
+
+
+        <div class="marquee mono" aria-label="Capabilities" data-i18n-aria="a11y.capabilities">
+          <div class="marquee-track">
+            <span data-i18n="m.1">Product strategy</span><span data-i18n="m.2">UX/UI</span><span data-i18n="m.3">iOS &amp; Android apps</span><span data-i18n="m.4">Web apps</span><span data-i18n="m.5">Streaming platforms</span><span data-i18n="m.6">Web audio</span><span data-i18n="m.7">Integrations &amp; APIs</span><span data-i18n="m.8">Payments</span><span data-i18n="m.9">Analytics</span><span data-i18n="m.10">Applied AI</span>
+            <span aria-hidden="true" data-i18n="m.1">Product strategy</span><span aria-hidden="true" data-i18n="m.2">UX/UI</span><span aria-hidden="true" data-i18n="m.3">iOS &amp; Android apps</span><span aria-hidden="true" data-i18n="m.4">Web apps</span><span aria-hidden="true" data-i18n="m.5">Streaming platforms</span><span aria-hidden="true" data-i18n="m.6">Web audio</span><span aria-hidden="true" data-i18n="m.7">Integrations &amp; APIs</span><span aria-hidden="true" data-i18n="m.8">Payments</span><span aria-hidden="true" data-i18n="m.9">Analytics</span><span aria-hidden="true" data-i18n="m.10">Applied AI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section contact" id="contacto" data-section="dark" data-spy="03">
+      <div class="sec-head mono"><span>[03]</span><span data-scramble-in data-i18n="ct.head">Contact</span><span data-i18n="ct.headRight">Write to us</span></div>
+
+      <div class="fit-wrap">
+        <h2 class="giant" data-fit aria-label="Let’s talk" data-i18n-aria="ct.aria"><span class="clip"><span data-chars data-i18n="ct.giant">let’s talk</span></span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-reveal>
+          <p class="contact-lead" data-i18n="ct.lead">Tell us about your project: a release, a photo shoot, a music video or the app your music needs.</p>
+          <dl class="contact-list mono">
+            <div>
+              <dt>Email</dt>
+              <dd><a class="email" href="mailto:contact@viacolectiva.com">contact@viacolectiva.com</a></dd>
+            </div>
+            <div>
+              <dt data-i18n="ct.social">Social</dt>
+              <dd class="socials">
+                <a href="https://www.instagram.com/viacolectiva/" target="_blank" rel="noopener">Instagram ↗</a>
+                <a href="https://www.youtube.com/@viacolectiva4951" target="_blank" rel="noopener">YouTube ↗</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+
+        <!--
+          Sin backend, el formulario abre el cliente de correo con el mensaje armado.
+          Para recibirlo directo (Formspree, Getform, etc.) completa data-endpoint con la URL del servicio.
+        -->
+        <form class="form" data-email="contact@viacolectiva.com" data-endpoint="" novalidate data-reveal>
+          <fieldset class="chips">
+            <legend class="mono" data-i18n="f.need">What do you need?</legend>
+            <label style="--c: var(--c-digital); --on-c: var(--ink)"><input type="checkbox" name="servicio" value="digital"><span data-i18n="area.digital">Digital products</span></label>
+            <label style="--c: var(--c-audio); --on-c: #fff"><input type="checkbox" name="servicio" value="audio"><span data-i18n="area.audio">Music &amp; audio</span></label>
+            <label style="--c: var(--c-imagen); --on-c: #fff"><input type="checkbox" name="servicio" value="imagen"><span data-i18n="area.imagen">Photo &amp; image</span></label>
+            <label style="--c: var(--c-video); --on-c: #fff"><input type="checkbox" name="servicio" value="video"><span data-i18n="area.video">Video</span></label>
+          </fieldset>
+          <div class="field">
+            <label class="mono" for="f-name" data-i18n="f.name">Name</label>
+            <input id="f-name" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label class="mono" for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label class="mono" for="f-msg" data-i18n="f.msg">Your project</label>
+            <textarea id="f-msg" name="mensaje" rows="4" required></textarea>
+          </div>
+          <div class="form-foot">
+            <p class="form-status mono" role="status" aria-live="polite"></p>
+            <button class="btn btn-lime" type="submit"><span data-i18n="f.send">Send message</span> <span aria-hidden="true">↗</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" data-section="dark" data-spy="03">
+    <div class="footer-logo" role="img" aria-label="viacolectiva"></div>
+    <div class="footer-row mono">
+      <span>© <span class="year">2026</span> viacolectiva</span>
+      <span class="footer-areas"><i style="--c: var(--c-audio)"></i><span data-i18n="ft.music">Music</span> <i style="--c: var(--c-imagen)"></i><span data-i18n="ft.photo">Photo</span> <i style="--c: var(--c-video)"></i><span>Video</span> <i style="--c: var(--c-digital)"></i><span>Digital</span></span>
+      <span data-i18n="ft.made">Designed &amp; built in-house</span>
+      <a href="#top" data-scramble data-i18n="ft.top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

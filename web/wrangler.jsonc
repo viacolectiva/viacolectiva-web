@@ -1,0 +1,10 @@
+// Configuración para publicar en Cloudflare (Worker con archivos estáticos).
+// Todo el sitio está en la carpeta public/. El "name" tiene que coincidir
+// con el nombre del Worker en Cloudflare.
+{
+  "name": "viacolectiva-web",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public"
+  }
+}
