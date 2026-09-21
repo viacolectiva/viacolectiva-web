@@ -1,0 +1,8 @@
+# Al repositorio sólo va la web (carpeta web/) y el README.
+# Todo lo demás (PSD, logos, PDF de textos, configuración local) queda fuera.
+/*
+!/web/
+!/README.md
+!/.gitignore
+
+.DS_Store
