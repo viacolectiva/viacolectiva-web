@@ -34,7 +34,8 @@ Librerías por CDN: GSAP + ScrollTrigger (animaciones) y Lenis (scroll suave). S
 
 - Repositorio: github.com/viacolectiva/viacolectiva-web (rama `main`). Contiene la carpeta **`web/`** entera (`web/wrangler.jsonc` + `web/public/`).
 - Cloudflare: Worker `viacolectiva-web` conectado a ese repositorio. En **Settings → Build → Root directory** tiene que decir **`web`**. Deploy command: `npx wrangler deploy`, sin build.
-- Para actualizar: en GitHub, **Add file → Upload files**, arrastrar la carpeta `web` entera → **Commit changes**. Cloudflare publica solo.
+- Para actualizar: la carpeta del proyecto es una copia local del repositorio (git). Se hace el cambio en `web/public`, commit y `git push` (usa la deploy key `~/.ssh/viacolectiva_web`, sólo con acceso a este repositorio). Cloudflare publica solo en ~1 minuto.
+- Alternativa manual: en GitHub, **Add file → Upload files**, arrastrar la carpeta `web` entera → **Commit changes**.
 - El `name` de `wrangler.jsonc` tiene que coincidir con el nombre del Worker.
 - Dominio: en el Worker, pestaña **Domains → Add → Custom domain** → `viacolectiva.com` y `www.viacolectiva.com`.
 
